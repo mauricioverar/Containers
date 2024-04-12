@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Containers</string>
+    <string name="btn1">Button</string>
+    <string name="btn2">Button</string>
+    <string name="btn3">Button</string>
+    <string name="btn4">Button</string>
+    <string name="btn5">Button</string>
+    <string name="btn6">Button</string>
+    <string name="todo">TODO</string>
+    <string name="hello">Hola</string>
+    <string name="hi">Hola</string>
 </resources>
