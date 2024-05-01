@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3">
+    tools:context=".MainActivityFrame">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -30,4 +30,17 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="230dp"
         android:text="Button" />
+
+    <Button
+        android:id="@+id/btnAlfa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alfa"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnBeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beta" />
 </FrameLayout>

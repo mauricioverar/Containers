@@ -1,6 +1,5 @@
 package com.example.containers;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,13 +10,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityFrame extends AppCompatActivity {
+
+    // declarar atts
+    Button btnAlfa;
+    Button btnBeta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_frame);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -25,28 +28,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // referenciar
-        Button btn = findViewById(R.id.button);
-        Button btn4 = findViewById(R.id.button4);
+        btnAlfa = findViewById(R.id.btnAlfa);
+        btnBeta = findViewById(R.id.btnBeta);
 
-        // declara intent para enviar datos
-        Intent secondScreen = getIntent();
-        Intent fourScreen = getIntent();
-
-
-        // mostrar mensaje Hello toast!
-        btn.setOnClickListener(new View.OnClickListener() {
+        btnAlfa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent secondScreen = new Intent(MainActivity.this, MainActivityRelative.class);
-                startActivity(secondScreen);
+                btnAlfa.setVisibility(View.GONE);
+                btnBeta.setVisibility(View.VISIBLE);
             }
         });
 
-        btn4.setOnClickListener(new View.OnClickListener() {
+        btnBeta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent fourScreen = new Intent(MainActivity.this, MainActivityFrame.class);
-                startActivity(fourScreen);
+                btnAlfa.setVisibility(View.VISIBLE);
+                btnBeta.setVisibility(View.GONE);
             }
         });
     }
